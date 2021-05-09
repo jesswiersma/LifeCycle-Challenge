@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Timer from "./timer";
+
 import './PokeFetch.css';
 
 
@@ -11,6 +13,7 @@ class PokeFetch extends Component {
       pokeName: '',
     }
   }
+
 
   fetchPokemon() {
     let min = Math.ceil(1);
@@ -29,12 +32,14 @@ class PokeFetch extends Component {
       .catch((err) => console.log(err))
   }
 
-  
+
   render() {
     return (
       <div className={'wrapper'}>
         <button className={'start'} onClick={() => this.fetchPokemon()}>Start!</button>
-        <h1 className={'timer'} >Timer Display</h1>
+        <h1 className={'timer'} >Timer</h1>
+        <Timer/>
+        
         <div className={'pokeWrap'}>
           <img className={'pokeImg'} src={this.state.pokeSprite} />
           <h1 className={'pokeName'}>{this.state.pokeName}</h1>
