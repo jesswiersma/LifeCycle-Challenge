@@ -29,6 +29,7 @@ class PokeFetch extends Component {
       .catch((err) => console.log(err))
   }
 
+  
   render() {
     return (
       <div className={'wrapper'}>
