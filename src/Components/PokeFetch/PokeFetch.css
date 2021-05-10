@@ -20,6 +20,7 @@
 .timer{ 
   font-family: 'Press Start 2P', cursive;
   font-size: 3em;
+  
 }
 
 .pokeWrap{
@@ -30,7 +31,20 @@
 
 .pokeImg {
   width: 500px;
+  
+  animation: fadeInAnimation ease 10s;
+  animation-iteration-count: 10;
+  animation-fill-mode: fowards;
 }
+  @keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .pokeName {
   font-family: 'Press Start 2P', cursive;
