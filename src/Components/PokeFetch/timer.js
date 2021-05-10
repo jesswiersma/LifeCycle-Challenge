@@ -1,31 +1,30 @@
-import React from "react";
+import React, {Component} from "react";
 
-export default function Timer() {
-  const [timer, setTimer] = React.useState(10);
-  const id = React.useRef(null);
-  const clear = () => {
-  window.clearInterval(id.current)
-}
-  React.useEffect(() => {
-     id.current = window.setInterval(() => {
-      setTimer((time) => time-1)
-    },1000)
-    return () => clear();
-  },[])
-
-  React.useEffect(() => {
-    if(timer === 0){
-      clear()
+class Timer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      time: 10
     }
+  }
 
-  },[timer])
+  tick() {
+    this.setState({
+      time: this.state.time -1
+    })
+  }
 
+  componentDidMount(){
+    setInterval(() => this.tick(), 1000);
+  }
 
-  return (
-    <div className="App">
-
-     <div>Time left : {timer} </div>
-
-    </div>
-  );
+  render(){
+    return (
+      <div>
+        <h2>{this.state.time}</h2>
+      </div>
+    )
+  }
 }
+
+export default Timer;

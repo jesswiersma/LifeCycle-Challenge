@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Timer from "./timer";
+//import Timer from "./timer";
 
 import './PokeFetch.css';
 
