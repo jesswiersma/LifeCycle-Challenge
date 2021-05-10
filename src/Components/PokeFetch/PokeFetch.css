@@ -32,7 +32,7 @@
 .pokeImg {
   width: 500px;
   
-  animation: fadeInAnimation ease 10s;
+  animation: fadeInAnimation ease 15s;
   animation-iteration-count: 10;
   animation-fill-mode: fowards;
 }
@@ -41,7 +41,7 @@
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 10;
   }
 }
 
